@@ -110,7 +110,7 @@ memory usage: 328.3 KB
 ```
 
 
-### ** DataFrame Shape **
+DataFrame Shape 
 ```python
 
 Shape: (2000, 21
