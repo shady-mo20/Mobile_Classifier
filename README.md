@@ -175,25 +175,36 @@ The results of the model evaluations are stored in CSV and PNG formats for furth
 
 
 Running the Project
+```
+
 git clone https://github.com/shady-mo20/telco-churn-prediction.git
 cd telco-churn-prediction
 
+```
 
 Install Dependencies: Ensure all required libraries are installed. You can use a requirements.txt file if available, or install libraries manually:
 
 bash
 
+```
 pip install -r requirements.txt
 
+```
 
 or
 
 bash
-pip install pandas numpy scikit-learn matplotlib seaborn
-Run the Main Script:
+```
 
+pip install pandas numpy scikit-learn matplotlib seaborn
+```
+
+Run the Main Script:
 bash
+```
+
 python main.py
+```
 
 
 View Model Performance:
