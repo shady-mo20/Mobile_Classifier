@@ -106,13 +106,20 @@ Data columns (total 21 columns):
  19  wifi           2000 non-null   int64  
  20  price_range    2000 non-null   int64  
 dtypes: float64(2), int64(19)
-memory usage: 328.3 KB
+memory usage: 328.3 KB 
+```
 
 
 ### ** DataFrame Shape **
-Shape: (2000, 21)
+```python
+
+Shape: (2000, 21
+
+```
 
 Descriptive Statistics
+
+```
        battery_power       blue  clock_speed     dual_sim  ...      three_g  touch_screen         wifi  price_range
 count    2000.000000  2000.0000  2000.000000  2000.000000  ...  2000.000000   2000.000000  2000.000000  2000.000000
 mean     1238.518500     0.4950     1.522250     0.509500  ...     0.761500      0.503000     0.507000     1.500000
@@ -123,11 +130,14 @@ min       501.000000     0.0000     0.500000     0.000000  ...     0.000000     
 75%      1615.250000     1.0000     2.200000     1.000000  ...     1.000000      1.000000     1.000000     2.250000
 max      1998.000000     1.0000     3.000000     1.000000  ...     1.000000      1.000000     1.000000     3.000000
 
+```
 [8 rows x 21 columns]
 
 
 
 First 5 Rows
+
+```
    battery_power  blue  clock_speed  dual_sim  fc  four_g  ...  sc_w  talk_time  three_g  touch_screen  wifi  price_range
 0            842     0          2.2         0   1       0  ...     7         19        0             0     1            1
 1           1021     1          0.5         1   0       1  ...     3          7        1             1     0            2
@@ -136,6 +146,7 @@ First 5 Rows
 4           1821     1          1.2         0  13       1  ...     2         15        1             1     0            1
 
 
+```
 Project Workflow
 
 Preprocessing:
