@@ -107,3 +107,91 @@ Data columns (total 21 columns):
  20  price_range    2000 non-null   int64  
 dtypes: float64(2), int64(19)
 memory usage: 328.3 KB
+
+
+### ** DataFrame Shape **
+Shape: (2000, 21)
+
+Descriptive Statistics
+       battery_power       blue  clock_speed     dual_sim  ...      three_g  touch_screen         wifi  price_range
+count    2000.000000  2000.0000  2000.000000  2000.000000  ...  2000.000000   2000.000000  2000.000000  2000.000000
+mean     1238.518500     0.4950     1.522250     0.509500  ...     0.761500      0.503000     0.507000     1.500000
+std       439.418206     0.5001     0.816004     0.500035  ...     0.426273      0.500116     0.500076     1.118314
+min       501.000000     0.0000     0.500000     0.000000  ...     0.000000      0.000000     0.000000     0.000000
+25%       851.750000     0.0000     0.700000     0.000000  ...     1.000000      0.000000     0.000000     0.750000
+50%      1226.000000     0.0000     1.500000     1.000000  ...     1.000000      1.000000     1.000000     1.500000
+75%      1615.250000     1.0000     2.200000     1.000000  ...     1.000000      1.000000     1.000000     2.250000
+max      1998.000000     1.0000     3.000000     1.000000  ...     1.000000      1.000000     1.000000     3.000000
+
+[8 rows x 21 columns]
+
+
+
+First 5 Rows
+   battery_power  blue  clock_speed  dual_sim  fc  four_g  ...  sc_w  talk_time  three_g  touch_screen  wifi  price_range
+0            842     0          2.2         0   1       0  ...     7         19        0             0     1            1
+1           1021     1          0.5         1   0       1  ...     3          7        1             1     0            2
+2            563     1          0.5         1   2       1  ...     2          9        1             1     0            2
+3            615     1          2.5         0   0       0  ...     8         11        1             0     0            2
+4           1821     1          1.2         0  13       1  ...     2         15        1             1     0            1
+
+
+Project Workflow
+
+Preprocessing:
+
+Data is loaded, cleaned, and prepared using functions from data_processing.py.
+Missing values are handled, outliers are removed, and data types are converted to optimize memory usage.
+Feature Engineering:
+
+New features are created and selected using feature_engineering.py.
+Categorical features are encoded, and numerical features are scaled for better performance.
+Model Training:
+
+Models like SVM, Random Forest, XGBoost, and others are initialized in models.py.
+The models are trained on the processed data, and the best-performing model is selected based on evaluation metrics.
+Evaluation:
+
+Model performance is evaluated using metrics like accuracy, precision, recall, F1-score, and ROC AUC.
+Confusion matrices and ROC curves are generated to better understand model predictions.
+Visualization:
+
+Data distributions, feature correlations, and learning curves are visualized to help better understand the model's performance and the dataset.
+Reporting:
+
+The results of the model evaluations are stored in CSV and PNG formats for further analysis and reporting.
+
+
+
+Running the Project
+git clone https://github.com/shady-mo20/telco-churn-prediction.git
+cd telco-churn-prediction
+
+
+Install Dependencies: Ensure all required libraries are installed. You can use a requirements.txt file if available, or install libraries manually:
+
+bash
+
+pip install -r requirements.txt
+
+
+or
+
+bash
+pip install pandas numpy scikit-learn matplotlib seaborn
+Run the Main Script:
+
+bash
+python main.py
+
+
+View Model Performance:
+
+Model performance metrics will be saved in output/reports/.
+Confusion matrices and ROC curves will be saved in output/plots/.
+Contact
+
+For questions or feedback, contact:
+
+Shady Mohammed: shasdymohammed@gmail.com
+GitHub: https://github.com/shady-mo20
