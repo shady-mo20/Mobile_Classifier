@@ -1,3 +1,4 @@
+```markdown
 # Telco Customer Churn Prediction
 
 ## Project Overview
@@ -68,6 +69,79 @@ This file provides utility functions, mainly for calculating feature importance.
   - `shap_importance()`: Uses SHAP values to calculate and plot feature importance for each model.
   - `permutation_importance_wrapper()`: Calculates feature importance by measuring the decrease in model accuracy after shuffling each feature.
 
+### 8. **data_info.py**
+Provides a function to generate and save comprehensive information about the dataset.
+
+- **Functions**:
+  - `display_data_info()`: Saves DataFrame info, shape, descriptive statistics, and first 5 rows to a text file.
+
+## Data Description
+
+### **Dataset Overview**
+
+```python
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 2000 entries, 0 to 1999
+Data columns (total 21 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   battery_power  2000 non-null   int64  
+ 1   blue           2000 non-null   int64  
+ 2   clock_speed    2000 non-null   float64
+ 3   dual_sim       2000 non-null   int64  
+ 4   fc             2000 non-null   int64  
+ 5   four_g         2000 non-null   int64  
+ 6   int_memory     2000 non-null   int64  
+ 7   m_dep          2000 non-null   float64
+ 8   mobile_wt      2000 non-null   int64  
+ 9   n_cores        2000 non-null   int64  
+ 10  pc             2000 non-null   int64  
+ 11  px_height      2000 non-null   int64  
+ 12  px_width       2000 non-null   int64  
+ 13  ram            2000 non-null   int64  
+ 14  sc_h           2000 non-null   int64  
+ 15  sc_w           2000 non-null   int64  
+ 16  talk_time      2000 non-null   int64  
+ 17  three_g        2000 non-null   int64  
+ 18  touch_screen   2000 non-null   int64  
+ 19  wifi           2000 non-null   int64  
+ 20  price_range    2000 non-null   int64  
+dtypes: float64(2), int64(19)
+memory usage: 328.3 KB
+```
+
+### **DataFrame Shape**
+
+```
+Shape: (2000, 21)
+```
+
+### **Descriptive Statistics**
+
+```python
+       battery_power       blue  clock_speed     dual_sim  ...      three_g  touch_screen         wifi  price_range
+count    2000.000000  2000.0000  2000.000000  2000.000000  ...  2000.000000   2000.000000  2000.000000  2000.000000
+mean     1238.518500     0.4950     1.522250     0.509500  ...     0.761500      0.503000     0.507000     1.500000
+std       439.418206     0.5001     0.816004     0.500035  ...     0.426273      0.500116     0.500076     1.118314
+min       501.000000     0.0000     0.500000     0.000000  ...     0.000000      0.000000     0.000000     0.000000
+25%       851.750000     0.0000     0.700000     0.000000  ...     1.000000      0.000000     0.000000     0.750000
+50%      1226.000000     0.0000     1.500000     1.000000  ...     1.000000      1.000000     1.000000     1.500000
+75%      1615.250000     1.0000     2.200000     1.000000  ...     1.000000      1.000000     1.000000     2.250000
+max      1998.000000     1.0000     3.000000     1.000000  ...     1.000000      1.000000     1.000000     3.000000
+
+[8 rows x 21 columns]
+```
+
+### **First 5 Rows**
+
+|   | battery_power | blue | clock_speed | dual_sim | fc | four_g | int_memory | m_dep | mobile_wt | n_cores | pc | px_height | px_width | ram | sc_h | sc_w | talk_time | three_g | touch_screen | wifi | price_range |
+|---|---------------|------|-------------|----------|----|--------|------------|-------|-----------|---------|----|-----------|----------|-----|------|------|-----------|---------|--------------|------|-------------|
+| 0 | 842           | 0    | 2.2         | 0        | 1  | 0      | 64         | 0.6   | 86        | 2       | 16 | 9         | 67       | 4   | 7    | 7    | 19        | 0       | 0            | 1    | 1           |
+| 1 | 1021          | 1    | 0.5         | 1        | 0  | 1      | 32         | 0.0   | 58        | 2       | 16 | 12        | 76       | 3   | 3    | 3    | 7         | 1       | 1            | 0    | 2           |
+| 2 | 563           | 1    | 0.5         | 1        | 2  | 1      | 16         | 0.3   | 73        | 4       | 16 | 8         | 57       | 2   | 2    | 2    | 9         | 1       | 1            | 0    | 2           |
+| 3 | 615           | 1    | 2.5         | 0        | 0  | 0      | 64         | 0.4   | 89        | 4       | 16 | 11        | 68       | 4   | 8    | 8    | 11        | 1       | 0            | 0    | 2           |
+| 4 | 1821          | 1    | 1.2         | 0        | 13 | 1      | 256        | 0.7   | 86        | 2       | 16 | 7         | 63       | 8   | 2    | 2    | 15        | 1       | 1            | 0    | 1           |
+
 ## Project Workflow
 
 1. **Preprocessing**: 
@@ -92,28 +166,36 @@ This file provides utility functions, mainly for calculating feature importance.
 6. **Reporting**: 
    - The results of the model evaluations are stored in CSV and PNG formats for further analysis and reporting.
 
-
+## Running the Project
 
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/shady-mo20/telco-churn-prediction.git
    cd telco-churn-prediction
+   ```
 
+2. **Install Dependencies**:
+   Ensure all required libraries are installed. You can use a `requirements.txt` file if available, or install libraries manually:
+   ```bash
+   pip install -r requirements.txt
+   ```
+   or
+   ```bash
+   pip install pandas numpy scikit-learn matplotlib seaborn
+   ```
 
+3. **Run the Main Script**:
+   ```bash
    python main.py
+   ```
 
-**View model performance**:
+4. **View Model Performance**:
+   - **Model performance metrics** will be saved in `output/reports/`.
+   - **Confusion matrices and ROC curves** will be saved in `output/plots/`.
 
-Model performance metrics will be saved in output/reports/.
-Confusion matrices and ROC curves will be saved in output/plots/.
+## Contact
 
-**Contact**
 For questions or feedback, contact:
 
-Shady Mohammed: shasdymohammed@gmail.com
-GitHub: https://github.com/shady-mo20
-
-
-
-
-This `README.md` explains the purpose, files, functions, workflow, and how to run the project step-by-step. Let me know if you'd like to add anything else!
+Shady Mohammed: [shasdymohammed@gmail.com](mailto:shasdymohammed@gmail.com)  
+GitHub: [https://github.com/shady-mo20](https://github.com/shady-mo20)
